@@ -1,19 +1,18 @@
 #include "main.h"
 
 /**
- * _isupper - checks if parameter is an uppercase character.
- * @c: input character.
- * Return: 1 if is an uppercase character, 0 in other case.
+ * print_most_numbers - prints number
  */
 
-int _isupper(int c)
+void print_most_numbers(void)
 {
-if (c >= 65 && c <= 90)
+int i;
+for (i = 0; i < 10; i++)
 {
-return (1);
+if (i != 2 && i != 4)
+{
+_putchar(i);
 }
-else
-{
-return (0);
 }
+_putchar('\n');
 }
