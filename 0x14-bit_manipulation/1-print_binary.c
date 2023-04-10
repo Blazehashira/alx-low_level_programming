@@ -9,17 +9,9 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int mask = 1UL << 63; /* assume 64-bit system */
 
-	if (n == 0)
-		putchar('0');
+	if (n > 1)
+		print_binary(n >> 1);
 
-	while (mask > 0)
-	{
-		if (n & mask)
-			putchar('1');
-		else
-			putchar('0');
-		mask >>= 1;
-	}
+	_putchar((n & 1) + '0');
 }
