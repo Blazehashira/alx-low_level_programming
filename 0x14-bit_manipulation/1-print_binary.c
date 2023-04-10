@@ -10,8 +10,26 @@
 void print_binary(unsigned long int n)
 {
 
-	if (n > 1)
-		print_binary(n >> 1);
+	unsigned long int mask = 1UL << 63;
+	int bit = 0;
 
-	_putchar((n & 1) + '0');
+
+	while (mask)
+	{
+	if (n & mask)
+	{
+		putchar('1');
+		bit = 1;
+	}
+	else if (bit)
+	{
+		putchar('0');
+	}
+	mask >>= 1;
+	}
+
+	if (!bit)
+	{
+		putchar('0');
+	}
 }
